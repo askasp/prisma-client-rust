@@ -24,7 +24,7 @@ pub fn struct_definition(ty: CompositeTypeWalker) -> TokenStream {
     });
 
     quote! {
-        #[derive(Debug, Clone, ::serde::Serialize, ::serde::Deserialize)]
+        #[derive(Debug, Clone, ::serde::Serialize, ::serde::Deserialize, ::utoipa::ToSchema)]
         #specta_derive
         pub struct Data {
             #(#fields),*
